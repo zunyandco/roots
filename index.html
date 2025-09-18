@@ -938,6 +938,22 @@
             showNotification('A new leaf joined your tree.');
         });
         
+        // Additional Button Functions
+        function gatherStories() {
+            showNotification('Stories feature coming soon - capture the memories that matter.');
+        }
+        
+        function captureMemory() {
+            showNotification('Save a moment - this feature is coming soon.');
+        }
+        
+        function sendInvitation() {
+            const email = prompt('Enter email address to invite:');
+            if (email) {
+                showNotification('Invitation sent to ' + email);
+            }
+        }
+        
         // Show Notification
         function showNotification(message) {
             const notification = document.createElement('div');
@@ -1007,4 +1023,9 @@
                     const radius = Math.sqrt(index) * radiusStep;
                     
                     nodePositions[member.id] = {
-                        x: centerX + Math.cos(angle) * radius + (Math.
+                        x: centerX + Math.cos(angle) * radius + (Math.random() - 0.5) * 30,
+                        y: centerY + Math.sin(angle) * radius * 0.6 + (Math.random() - 0.5) * 30
+                    };
+                }
+            });
+        }
